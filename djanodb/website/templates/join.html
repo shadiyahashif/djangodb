@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% block title %} Join page {% endblock %}
+{% block content %}
+
+      {% if messages %}
+       {% for message in messages %}
+          <div class="alert alert-warning"  role="alert">
+            {{message}}
+          </div> 
+
+       {% endfor %} 
+    {% endif %}  
+  
+  
+  
+  <h2>Join Today !</h2><br>
+
+  <form method="POST" action="{% url 'join' %}">
+    {% csrf_token %}   
+   <div class="mb-3">
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Full Name" name="f_name" value="{{f_name}}">
+  </div>
+  <div class="mb-3">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Short Name" name="l_name"  value="{{l_name}}">
+  </div>
+  <div class="mb-3">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Age" name="age"  value="{{age}}">
+  </div> 
+  <div class="mb-3">
+    <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Email Address" name="email"  value="{{email}}">
+  </div> 
+    <div class="mb-3">
+      <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Password" name="password"  value="{{password}}">
+  </div><br>
+  <div class="col-12">
+    <button type="submit" class="btn btn-secondary">Sign in</button>
+  </div>
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% block title %}  Home page {% endblock %}
+{% block content %}
+    <h4> Members Database </h4>
+    <br>
+    {% for item in all %}
+       <strong>{{item.f_name}} {{item.l_name}} </strong><br/>
+       Email :  {{item.email}} <br/>
+       Age :  {{item.age}} <br/> 
+  <hr>
+   {% endfor %}  
+{% endblock %}
